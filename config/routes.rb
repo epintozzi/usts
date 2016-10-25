@@ -7,4 +7,6 @@ Rails.application.routes.draw do
 
   resources :boat_classes, only: [:new, :create, :edit, :update, :index]
 
+  resources :registrations, except: [:destroy]
+
 end

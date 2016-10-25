@@ -22,7 +22,13 @@ RSpec.describe Race, type: :model do
 
         expect(race).to be_valid
       end
+    end
+  end
+  describe "relationships" do
+    it "has many registrations" do
+      race = create(:race)
 
+      expect(race).to respond_to(:registrations)
     end
   end
 end

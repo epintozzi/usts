@@ -42,4 +42,11 @@ RSpec.describe User, type: :model do
       end
     end
   end
+  describe "relationships" do
+    it "has many registrations" do
+      user = create(:user)
+
+      expect(user).to respond_to(:registrations)
+    end
+  end
 end
