@@ -31,4 +31,36 @@ RSpec.describe Registration, type: :model do
       end
     end
   end
+
+  describe "relationships" do
+    it "belongs to a race" do
+      race = create(:race)
+      user = create(:user)
+      boat_class = create(:boat_class)
+
+      registration = Registration.new(user_id: user.id, race_id: race.id, boat_class_id: boat_class.id)
+
+      expect(registration).to respond_to(:race)
+    end
+
+    it "belongs to a user" do
+      race = create(:race)
+      user = create(:user)
+      boat_class = create(:boat_class)
+
+      registration = Registration.new(user_id: user.id, race_id: race.id, boat_class_id: boat_class.id)
+
+      expect(registration).to respond_to(:user)
+    end
+
+    it "belongs to a boat_class" do
+      race = create(:race)
+      user = create(:user)
+      boat_class = create(:boat_class)
+
+      registration = Registration.new(user_id: user.id, race_id: race.id, boat_class_id: boat_class.id)
+
+      expect(registration).to respond_to(:boat_class)
+    end
+  end
 end
