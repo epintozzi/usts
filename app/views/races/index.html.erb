@@ -1,0 +1,7 @@
+<h2> 2017 Season </h2>
+
+<% @races.each do |race| %>
+<ul>
+  <%= link_to race.city, race_path(race) %>
+</ul>
+<% end %>
