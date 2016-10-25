@@ -3,4 +3,6 @@ Rails.application.routes.draw do
 
   resources :races, only: [:index, :new, :create, :show]
 
+  resources :users, except: [:destroy]
+
 end
