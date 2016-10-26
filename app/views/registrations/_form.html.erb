@@ -1,0 +1,11 @@
+<div class="container">
+<%= form_for @registration do |f| %>
+  <%= f.collection_select(:race_id, Race.all, :id, :city, { prompt: "Select Race" }) %>
+
+  <%= f.collection_select(:boat_class_id, BoatClass.all, :id, :class_name, { prompt: "Select Class" }) %>
+
+
+
+  <%= f.submit "Submit Registration" %>
+<% end %>
+</div>
