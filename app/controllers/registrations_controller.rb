@@ -11,7 +11,6 @@ class RegistrationsController < ApplicationController
   def create
     @registration = Registration.new(registration_params)
     if @registration.save
-      # byebug
       flash[:success] = "You have successfully registered for the #{@registration.race.city} race"
       redirect_to registrations_path
     else
