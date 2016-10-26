@@ -14,6 +14,7 @@ describe "User can create account" do
     fill_in 'user[last_name]', with: last_name
     fill_in 'user[email]', with: email
     fill_in 'user[password]', with: password
+    fill_in 'user[password_confirmation]', with: password
     fill_in 'user[boat_number]', with: boat_number
     fill_in 'user[usts_number]', with: usts_number
     click_on "Create User"

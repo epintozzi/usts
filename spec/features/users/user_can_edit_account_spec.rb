@@ -12,6 +12,7 @@ describe "User can edit profile" do
     fill_in 'user[boat_number]', with: new_boat_number
     fill_in 'user[last_name]', with: new_last_name
     fill_in 'user[password]', with: user.password
+    fill_in 'user[password_confirmation]', with: user.password
     click_on "Update User"
 
     expect(page).to have_content new_boat_number
