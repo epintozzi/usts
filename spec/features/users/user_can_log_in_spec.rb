@@ -7,7 +7,7 @@ describe "User can log in" do
     visit '/login'
     fill_in "email", with: user.email
     fill_in "password", with: user.password
-    click_on "Login"
+    click_button "Login"
 
     expect(page).to have_content("You have successfully logged in")
   end
