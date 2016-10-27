@@ -3,7 +3,11 @@ Rails.application.routes.draw do
 
   root 'dashboard#index'
 
-  resources :races, only: [:index, :new, :create, :show]
+  resources :races, only: [:index, :show]
+
+  namespace :admin do
+    resources :races, except: [:destroy]
+  end
 
   resources :users, except: [:destroy]
 

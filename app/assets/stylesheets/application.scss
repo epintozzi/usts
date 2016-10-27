@@ -15,14 +15,31 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
- //
- // h2, h3, h4 {
- //   padding-top: 15px;
- //   padding-bottom: 15px;
- //   font-family: "Open Sans", sans-serif;
- //   color: #0B610B;
- // }
- //
- // ul, li {
- //   list-style-type: none !important;
- // }
+
+ .nav {
+   background-color: transparent;
+ }
+
+ h2, h3, h4 {
+   padding-top: 15px;
+   padding-bottom: 15px;
+   font-family: "Open Sans", sans-serif;
+ }
+
+ ul, li {
+   list-style-type: none !important;
+ }
+
+ .jumbotron {
+   background-image: url(http://www.ustitleseries.net/wp-content/uploads/2014/02/cropped-2011-Nats-JT-250R3.jpg);
+   margin: -21px;
+   height: 500px;
+ }
+
+ .slogan {
+   padding-top: 225px;
+ }
+
+ .edit {
+   height: 30px;
+ }
