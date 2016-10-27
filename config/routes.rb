@@ -11,7 +11,9 @@ Rails.application.routes.draw do
 
   resources :users, except: [:destroy]
 
-  resources :boat_classes, only: [:new, :create, :edit, :update, :index]
+  namespace :admin do
+    resources :boat_classes, only: [:new, :create, :edit, :update, :index]
+  end
 
   resources :registrations, except: [:destroy]
 
