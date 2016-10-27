@@ -12,7 +12,12 @@ FactoryGirl.define do
     usts_number "12345"
     sequence(:email) { |n| "Email #{n}" }
     password "password"
+
+    factory :admin do
+      role 1
+    end
   end
+
 
   factory :boat_class do
     sequence(:class_name) { |n| "Class Name #{n}" }

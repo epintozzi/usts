@@ -1,0 +1,14 @@
+<div class="container">
+  <h2> 2017 Season </h2>
+
+<% @races.each do |race| %>
+<ul>
+  <li><h3><%= link_to race.city, race_path(race) %>
+  <%= link_to edit_admin_race_path(race) do %>
+  <button type="button" class="btn btn-success edit" aria-haspopup="true" aria-expanded="false">
+    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+  </button>
+  <% end %></h3></li>
+</ul>
+<% end %>
+</div>
