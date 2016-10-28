@@ -2,6 +2,8 @@
 <%= form_for @registration do |f| %>
   <%= f.collection_select(:race_id, Race.all, :id, :city, { prompt: "Select Race" }) %>
 
+  <%= f.collection_select(:user_id, User.all, :id, :first_name, {selected: current_user.first_name}) %>
+
   <%= f.collection_select(:boat_class_id, BoatClass.all, :id, :class_name, { prompt: "Select Class" }) %>
 
   <%= f.submit "Submit Registration" %>

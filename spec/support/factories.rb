@@ -23,4 +23,5 @@ FactoryGirl.define do
     sequence(:class_name) { |n| "Class Name #{n}" }
   end
 
+
 end

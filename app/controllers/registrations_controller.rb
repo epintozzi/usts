@@ -11,7 +11,7 @@ class RegistrationsController < ApplicationController
 
   def create
     @user = User.find(current_user.id)
-    @registration = @user.registrations.create(registration_params)
+    @registration = Registration.new(registration_params)
     if @registration.save
       flash[:success] = "You have successfully registered for the #{@registration.race.city} race"
       redirect_to registrations_path
@@ -22,11 +22,17 @@ class RegistrationsController < ApplicationController
   end
 
   def edit
-
+    @registration = Registration.find(params[:id])
   end
 
   def update
-
+    @registration = Registration.find(params[:id])
+    if @registration.update(registration_params)
+      flash[:success] = "You have successfully updated your registration for the #{@registration.race.city} race"
+      redirect_to registrations_path
+    else
+      render :edit
+    end
   end
 
   private
