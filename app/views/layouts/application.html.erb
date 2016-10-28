@@ -32,14 +32,14 @@
           <li><%= link_to "Our Drivers", users_path %></li>
           <li><%= link_to "Registrations", registrations_path %></li>
           <li class="dropdown">
-            <a href="/registrations" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">2017 Schedule <span class="caret"></span></a>
+            <a href="/races" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">2017 Schedule <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <% Race.all.each do |race| %>
               <li> <%= link_to race.city, race_path(race) %>
                 <% end %>
               </li>
               <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
+              <li><a href="/races">View full schedule</a></li>
             </ul>
           </li>
           <li>
