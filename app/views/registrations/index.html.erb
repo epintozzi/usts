@@ -7,4 +7,23 @@
   <%= registration.boat_class.class_name %>
   <%= registration.race.city %></li>
 <% end %>
+
+<% if logged_in? %>
+<%= link_to new_registration_path do %>
+<div class="btn-group">
+  <button type="button" class="btn btn-info" aria-haspopup="true" aria-expanded="false">
+    Add new registration
+  </button>
+</div>
+  <% end %>
+  <% else %>
+  <%= link_to login_path do %>
+  <div class="btn-group">
+    <button type="button" class="btn btn-info" aria-haspopup="true" aria-expanded="false">
+      Login to register
+    </button>
+  </div>
+  <% end %>
+  <% end %>
+</div>
 </div>

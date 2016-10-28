@@ -3,7 +3,7 @@
 
 <% @races.each do |race| %>
 <ul>
-  <li><h3><%= link_to race.city, race_path(race) %></li>
+  <li><h4><%= link_to race.city, race_path(race) %> - <%=  "#{race.start_date.strftime("%b %d %Y")}"%></h4></li>
 </ul>
 <% end %>
 </div>

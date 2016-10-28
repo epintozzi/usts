@@ -8,7 +8,6 @@ describe "Admin can update a race" do
 
       address = "200 W 1st St"
       city = "DePue"
-      start_date = '2017/07/25'
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 

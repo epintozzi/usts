@@ -1,7 +1,28 @@
 <div class="container">
-<h2><%= "#{@race.city}, #{@race.state} Race Information" %> </h2>
+  <h2><%= "#{@race.city}, #{@race.state} Race Information" %> </h2>
+  <div>
+    <h4> Address: </h4>
+    <%= "#{@race.address}, #{@race.city}, #{@race.state}" %>
+    <br>
+    <h4> Dates: </h4>
+    <%= "#{@race.start_date.strftime("%b %d %Y")} - #{@race.end_date.strftime("%b %d %Y")}" %>
+  </div>
 
-<%= "Address: #{@race.address}, #{@race.city}, #{@race.state}" %>
-<br>
-<%= "Dates: #{@race.start_date} - #{@race.end_date}" %>
+  <% if logged_in? %>
+  <%= link_to new_registration_path do %>
+  <div class="btn-group">
+    <button type="button" class="btn btn-info" aria-haspopup="true" aria-expanded="false">
+      Register for race
+    </button>
+    <% end %>
+    <% else %>
+    <%= link_to login_path do %>
+    <div class="btn-group">
+      <button type="button" class="btn btn-info" aria-haspopup="true" aria-expanded="false">
+        Login to register
+      </button>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
 </div>

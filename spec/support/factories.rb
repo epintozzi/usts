@@ -3,11 +3,13 @@ FactoryGirl.define do
     address "15 Yemen St"
     city "Yemen"
     state "IL"
+    start_date '2017/07/25'
+    end_date  '2017/07/27'
   end
 
   factory :user do
-    first_name "Erin"
-    last_name "Pintozzi"
+    sequence(:first_name) { |n| "Name #{n}"}
+    sequence(:last_name) { |n| "Last Name #{n}"}
     boat_number "V26"
     usts_number "12345"
     sequence(:email) { |n| "Email #{n}" }
