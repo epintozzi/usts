@@ -2,7 +2,9 @@
 <h2> All Registrations for 2017 </h2>
 
 <% @registrations.each do |registration| %>
-<li>  <%= registration.boat_class.class_name %>
+<li>
+  <%= registration.user.first_name %> <%= registration.user.last_name %>
+  <%= registration.boat_class.class_name %>
   <%= registration.race.city %></li>
 <% end %>
 </div>
