@@ -1,0 +1,41 @@
+<div class="container">
+  <h2>Admin Dashboard</h2>
+
+<div class="row">
+  <div class="col-md-4">
+  <div class="reg_by_race">
+    <h4>Registrations by Race</h4>
+    <ul>
+      <li>
+        <% @races.each do |race| %>
+          <h5><%= race.city %></h5>
+          <ul>
+          <% race.registrations.each do |registration| %>
+            <li><%= registration.user.first_name %>
+            <%= registration.user.last_name %>
+            <%= registration.boat_class.class_name %></li>
+            <% end %>
+          </ul>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="col-md-4">
+  <div class="reg_by_class">
+    <h4>Registrations by Class</h4>
+    <ul>
+      <% @registrations.each do |boat_class, count| %>
+      <li><%= boat_class.class_name %> <span class="badge"><%= count %></span></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<div class="col-md-4">
+  <div class="reg_by_driver">
+    <h4>Registrations by Driver</h4>
+  </div>
+</div>
+
+</div>
+</div>

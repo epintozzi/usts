@@ -7,13 +7,10 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :races, except: [:destroy]
+    resources :boat_classes, only: [:new, :create, :edit, :update, :index]
   end
 
   resources :users, except: [:destroy]
-
-  namespace :admin do
-    resources :boat_classes, only: [:new, :create, :edit, :update, :index]
-  end
 
   resources :registrations, except: [:destroy]
 
@@ -21,4 +18,5 @@ Rails.application.routes.draw do
   post '/login', to: "sessions#create"
   delete '/logout', to: "sessions#destroy"
   get '/logout', to: "sessions#destroy"
+  get '/admin', to: "admin/dashboard#index"
 end

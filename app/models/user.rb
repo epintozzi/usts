@@ -7,6 +7,11 @@ class User < ApplicationRecord
   validates :password, length: {minimum: 8}
 
   has_many :registrations
+  has_many :boat_classes, through: :registrations
 
   enum role: [:default, :admin]
+
+  def boat_class_string
+    boat_classes.map(&:class_name).uniq.join(", ")
+  end
 end
